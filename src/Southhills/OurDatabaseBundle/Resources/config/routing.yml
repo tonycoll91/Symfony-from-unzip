@@ -1,0 +1,9 @@
+southhills_our_database_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SouthhillsOurDatabaseBundle:Default:index }
+
+southhills_retrieve_car_by_id:
+    pattern: /getMeACar/{id}
+    defaults: { _controller: SouthhillsOurDatabaseBundle:Default:getMeACar, id:1 }
+    requirements:
+     id: \d+

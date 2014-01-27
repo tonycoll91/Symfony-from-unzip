@@ -1,0 +1,7 @@
+parameters:
+#    antonino_simple_emailer.example.class: Antonino\SimpleEmailerBundle\Example
+
+services:
+#    antonino_simple_emailer.example:
+#        class: %antonino_simple_emailer.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,7 @@
+antonino_simple_emailer_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: AntoninoSimpleEmailerBundle:Default:index }
+
+antonino_template_design:
+    pattern: /global-template
+    defaults: { _controller: AntoninoSimpleEmailerBundle:Default:globalTemplate }

@@ -1,0 +1,15 @@
+southhills_our_first_homepage:
+    pattern:  /speak/{name}
+    defaults: { _controller: SouthhillsOurFirstBundle:Default:index }
+
+southhills_jump:
+    pattern: /jump/{name}
+    defaults: { _controller: SouthhillsOurFirstBundle:Default:jump }
+
+southhills_contact_us:
+    pattern: /contact-us
+    defaults: {_controller: SouthhillsOurFirstBundle:Default:contactUs }
+
+southhills_test_global_template:
+    pattern: /test-global-template
+    defaults: {_controller: SouthhillsOurFirstBundle:Default:testGlobalTemplate }

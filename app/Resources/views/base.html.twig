@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta charset="utf-8"/>
+		<meta name="description" content="">
+		<meta name="author" content="">
+        <title>{% block title %}Urban Artist{% endblock %}</title>
+		{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/screen.css') }}" />{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+		<div id="wrap">
+			{% block header %}
+				<div id="header">			
+						
+					<h1 id="logo-text"><a href="global-template" title="">UrbanArtist</a></h1>		
+					<p id="intro">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+					Cras id urna. Morbi tincidunt, orci ac convallis aliquam. 
+					</p>	
+					
+					<div  id="nav">
+						<ul>
+							<li id="current"><a href="global-template">Home</a></li>
+							<li><a href="style.html">Style Demo</a></li>
+							<li><a href="global-template">Downloads</a></li>
+							<li><a href="global-template">Services</a></li>
+							<li><a href="global-template">Support</a></li>
+							<li><a href="global-template">About</a></li>		
+						</ul>		
+					</div>					
+				</div>
+			{% endblock %}
+			
+			{% block body %}
+				<div id="content-wrap">
+					<div id="main">
+						
+						<h2><a href="global-template">Lorem Ipsum Dolor Sit Amet</a></h2>
+						
+						<h3>Aliquam Risus Justo</h3>
+						<p><a href="http://getfirefox.com/"><img src="{{ asset('images/firefox-gray.jpg') }}" width="100" height="120" alt="firefox" class="float-left" /></a>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+						Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
+						posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum 
+						odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra 
+						condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. 
+						In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+						Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
+						posuere nunc justo tempus leo. 				
+						</p>
+						
+						<blockquote>
+						<p>To be yourself in a world that is constantly trying to 
+						make you something else is the greatest accomplishment.
+						</p>
+						
+						<p class="align-right"> - Ralph Waldo Emerson</p>
+						</blockquote>
+						
+						<p>
+						Vestibulum venenatis. Nulla vel ipsum. Proin rutrum, urna sit amet bibendum 
+						pellentesque, ante sapien varius turpis, eu nonummy nunc urna scelerisque ante. 
+						Nunc sed leo at dolor pharetra facilisis. Sed sed lectus at justo dapibus tristique. 
+						Morbi molestie pulvinar elit. Donec dictum nibh nec est. Aliquam sagittis, lacus 
+						a pharetra tempor, enim justo tempor nisi, at aliquet nulla metus sed augue. 
+						Praesent sed nibh. Vestibulum bibendum enim ut nisi fringilla accumsan. 
+						Nullam dapibus fermentum nulla. Phasellus in orci vel justo facilisis iaculis. 
+						Quisque facilisis ornare felis. Curabitur nunc libero, dapibus vel, commodo nec, 
+						semper a, massa. Suspendisse potenti. Morbi a nisl. Nunc euismod elit non lectus. 				
+						</p>
+					
+					<!-- main ends -->	
+					</div>
+				
+					<!-- sidebar starts -->
+					<div id="sidebar">			
+						
+						{% block sidebar %}
+						<h3>About</h3>			
+						
+						<p>
+						<a href="http://getfirefox.com/"><img src="{{ asset('images/thumb.jpg') }}" width="40" height="40" alt="firefox" class="float-left" /></a>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+						Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
+						posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum 
+						odio, ac blandit ante orci ut diam.
+						</p>
+						
+						<form id="quick-search" action="global-template" method="get" >
+						<p>
+						<label for="qsearch">Search:</label>
+						<input class="tbox" id="qsearch" type="text" name="qsearch" value="Search this site..." title="Start typing and hit ENTER" />
+						<input class="btn" alt="Search" type="image" name="searchsubmit" title="Search" src="{{ asset('images/search.gif') }}" />
+						</p>
+						</form>	
+					
+						<h3>Sidebar Menu</h3>
+						<ul class="sidemenu">				
+							<li><a href="global-template">Home</a></li>
+							<li><a href="global-template#TemplateInfo">TemplateInfo</a></li>
+							<li><a href="style.html">Style Demo</a></li>
+							<li><a href="http://themeforest.net?ref=ealigam" title="Web Templates">Web Templates</a></li>
+						</ul>	
+							
+						<h3>Links</h3>
+						<ul class="sidemenu">
+							<li><a href="http://www.psdtuts.com/">PSDTuts</a></li>
+							<li><a href="http://www.alistapart.com">Alistapart</a></li>					
+							<li><a href="http://www.cssremix.com">CSS Remix</a></li>
+							<li><a href="http://www.cssmania.com/">CSS Mania</a></li>					
+						</ul>
+						
+						<h3>Sponsors</h3>
+						<ul class="sidemenu">
+						<li><a href="http://themeforest.net?ref=ealigam" title="Themeforest">Themeforest <br />
+						   <span>Site Templates, Web &amp; CMS Themes</span></a>
+						</li>
+						<li><a href="http://www.4templates.com/?go=228858961" title="4Templates">4Templates <br />
+						   <span>Low Cost High-Quality Templates</span></a>
+						</li>
+						<li><a href="http://store.templatemonster.com?aff=ealigam" title="Templatemonster">TemplateMonster <br />
+						   <span>Delivering the Best Templates on the Net!</span>
+						</a></li>
+						<li><a href="http://graphicriver.net?ref=ealigam" title="Graphic River">Graphic River <br />
+						   <span>Awesome Stock Graphics</span></a>
+						</li>
+						<li><a href="http://www.dreamhost.com/r.cgi?287326|SSHOUT" title="Dremahost">Dreamhost <br />
+						   <span>Premium Webhosting. Use the promocode <strong>sshout</strong> and save <strong>50 USD</strong>.</span></a>
+						</li>
+						</ul>
+						
+						<h3>Wise Words</h3>
+						<p>&quot;To be yourself in a world that is constantly trying to make you 
+						  something else is the greatest accomplishment.&quot; </p>
+								
+						<p class="align-right">- Ralph Waldo Emerson</p>
+								
+						<h3>Support Styleshout</h3>
+						<p>If you are interested in supporting my work and would like to contribute, you are
+						welcome to make a small donation through the 
+						<a href="http://www.styleshout.com/">donate link</a> on my website - it will 
+						be a great help and will surely be appreciated.</p>						
+						
+						{% endblock %}
+					<!-- sidebar ends -->		
+					</div>
+				
+				<!-- content-wrap ends-->	
+				</div>
+			{% endblock %}
+			
+			{% block footer %} 
+				<!-- footer starts here -->
+				<div id="footer">
+				
+					<div id="footer-left">
+						<p>
+						&copy; copyright info here	&nbsp;
+						Design by <a href="http://www.styleshout.com/">styleshout</a> &nbsp;
+						</p>	
+					</div>
+					
+					<div id="footer-right">
+						<p class="align-right">
+						<a href="global-template">Home</a> | <a href="global-template">Sitemap</a> | <a href="global-template" class="rssfeed">RSS Feed</a> 
+						</p>
+					</div>
+					
+				</div>
+				<!-- footer ends here -->
+			{% endblock %}
+			{% block javascripts %}{% endblock %}
+		</div>
+    </body>
+</html>

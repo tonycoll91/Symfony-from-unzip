@@ -1,0 +1,7 @@
+parameters:
+#    southhills_our_first.example.class: Southhills\OurFirstBundle\Example
+
+services:
+#    southhills_our_first.example:
+#        class: %southhills_our_first.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

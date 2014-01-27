@@ -1,0 +1,7 @@
+parameters:
+#    southhills_our_database.example.class: Southhills\OurDatabaseBundle\Example
+
+services:
+#    southhills_our_database.example:
+#        class: %southhills_our_database.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
