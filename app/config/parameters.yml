@@ -5,10 +5,10 @@ parameters:
     database_name: symfony
     database_user: root
     database_password: null
-    mailer_transport: smtp
+    mailer_transport: gmail
     mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
+    mailer_user: antoninocolletti23@gmail.com
+    mailer_password: p@ssw0rd1
     locale: en
     secret: 2e634c1eb1cd6c283bbf5bb9104e1bd3a
     database_path: null

@@ -5,3 +5,7 @@ antonino_simple_emailer_homepage:
 antonino_template_design:
     pattern: /global-template
     defaults: { _controller: AntoninoSimpleEmailerBundle:Default:globalTemplate }
+
+antonino_emailer:
+    pattern: /email/{emailAddress}
+    defaults: { _controller: AntoninoSimpleEmailerBundle:Default:email }

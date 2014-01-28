@@ -145,6 +145,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Antonino\\SimpleEmailerBundle\\Controller\\DefaultController::globalTemplateAction',  '_route' => 'antonino_template_design',);
         }
 
+        // antonino_emailer
+        if (0 === strpos($pathinfo, '/email') && preg_match('#^/email/(?P<emailAddress>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'antonino_emailer')), array (  '_controller' => 'Antonino\\SimpleEmailerBundle\\Controller\\DefaultController::emailAction',));
+        }
+
         // southhills_our_database_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'southhills_our_database_homepage')), array (  '_controller' => 'Southhills\\OurDatabaseBundle\\Controller\\DefaultController::indexAction',));

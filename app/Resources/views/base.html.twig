@@ -37,33 +37,32 @@
 				</div>
 			{% endblock %}
 			
-			{% block body %}
 				<div id="content-wrap">
 					<div id="main">
+					{% block body %}
+						<h2><a href="global-template"><{% block h2 %}Lorem Ipsum Dolor Sit Amet{% endblock %}</a></h2>
 						
-						<h2><a href="global-template">Lorem Ipsum Dolor Sit Amet</a></h2>
-						
-						<h3>Aliquam Risus Justo</h3>
-						<p><a href="http://getfirefox.com/"><img src="{{ asset('images/firefox-gray.jpg') }}" width="100" height="120" alt="firefox" class="float-left" /></a>
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+						<h3>{% block h3 %}Aliquam Risus Justo{% endblock %}</h3>
+						<p><a {% block hrefp1 %}href="http://getfirefox.com/"{% endblock%}> <img {% block imgp1 %}src="{{ asset('images/firefox-gray.jpg') }}" alt="firefox"{% endblock %} width="100" height="120"  class="float-left" /></a>
+						{% block par1 %}Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
 						Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
 						posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum 
 						odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra 
 						condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. 
 						In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
 						Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
-						posuere nunc justo tempus leo. 				
+						posuere nunc justo tempus leo.{% endblock %}			
 						</p>
 						
 						<blockquote>
-						<p>To be yourself in a world that is constantly trying to 
-						make you something else is the greatest accomplishment.
+						<p>{% block quote %}To be yourself in a world that is constantly trying to 
+						make you something else is the greatest accomplishment.{% endblock %}
 						</p>
 						
-						<p class="align-right"> - Ralph Waldo Emerson</p>
+						<p class="align-right"> - {% block quoteAuthor %}Ralph Waldo Emerson{% endblock %}</p>
 						</blockquote>
 						
-						<p>
+						<p>{% block par2 %}
 						Vestibulum venenatis. Nulla vel ipsum. Proin rutrum, urna sit amet bibendum 
 						pellentesque, ante sapien varius turpis, eu nonummy nunc urna scelerisque ante. 
 						Nunc sed leo at dolor pharetra facilisis. Sed sed lectus at justo dapibus tristique. 
@@ -72,9 +71,9 @@
 						Praesent sed nibh. Vestibulum bibendum enim ut nisi fringilla accumsan. 
 						Nullam dapibus fermentum nulla. Phasellus in orci vel justo facilisis iaculis. 
 						Quisque facilisis ornare felis. Curabitur nunc libero, dapibus vel, commodo nec, 
-						semper a, massa. Suspendisse potenti. Morbi a nisl. Nunc euismod elit non lectus. 				
+						semper a, massa. Suspendisse potenti. Morbi a nisl. Nunc euismod elit non lectus. {% endblock %}				
 						</p>
-					
+					{% endblock %}
 					<!-- main ends -->	
 					</div>
 				
@@ -115,45 +114,13 @@
 							<li><a href="http://www.cssremix.com">CSS Remix</a></li>
 							<li><a href="http://www.cssmania.com/">CSS Mania</a></li>					
 						</ul>
-						
-						<h3>Sponsors</h3>
-						<ul class="sidemenu">
-						<li><a href="http://themeforest.net?ref=ealigam" title="Themeforest">Themeforest <br />
-						   <span>Site Templates, Web &amp; CMS Themes</span></a>
-						</li>
-						<li><a href="http://www.4templates.com/?go=228858961" title="4Templates">4Templates <br />
-						   <span>Low Cost High-Quality Templates</span></a>
-						</li>
-						<li><a href="http://store.templatemonster.com?aff=ealigam" title="Templatemonster">TemplateMonster <br />
-						   <span>Delivering the Best Templates on the Net!</span>
-						</a></li>
-						<li><a href="http://graphicriver.net?ref=ealigam" title="Graphic River">Graphic River <br />
-						   <span>Awesome Stock Graphics</span></a>
-						</li>
-						<li><a href="http://www.dreamhost.com/r.cgi?287326|SSHOUT" title="Dremahost">Dreamhost <br />
-						   <span>Premium Webhosting. Use the promocode <strong>sshout</strong> and save <strong>50 USD</strong>.</span></a>
-						</li>
-						</ul>
-						
-						<h3>Wise Words</h3>
-						<p>&quot;To be yourself in a world that is constantly trying to make you 
-						  something else is the greatest accomplishment.&quot; </p>
-								
-						<p class="align-right">- Ralph Waldo Emerson</p>
-								
-						<h3>Support Styleshout</h3>
-						<p>If you are interested in supporting my work and would like to contribute, you are
-						welcome to make a small donation through the 
-						<a href="http://www.styleshout.com/">donate link</a> on my website - it will 
-						be a great help and will surely be appreciated.</p>						
-						
+											
 						{% endblock %}
 					<!-- sidebar ends -->		
 					</div>
 				
 				<!-- content-wrap ends-->	
 				</div>
-			{% endblock %}
 			
 			{% block footer %} 
 				<!-- footer starts here -->

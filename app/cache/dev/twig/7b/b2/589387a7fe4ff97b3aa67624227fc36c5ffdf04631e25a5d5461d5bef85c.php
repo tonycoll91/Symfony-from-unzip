@@ -14,6 +14,14 @@ class __TwigTemplate_7bb2589387a7fe4ff97b3aa67624227fc36c5ffdf04631e25a5d5461d5b
             'stylesheets' => array($this, 'block_stylesheets'),
             'header' => array($this, 'block_header'),
             'body' => array($this, 'block_body'),
+            'h2' => array($this, 'block_h2'),
+            'h3' => array($this, 'block_h3'),
+            'hrefp1' => array($this, 'block_hrefp1'),
+            'imgp1' => array($this, 'block_imgp1'),
+            'par1' => array($this, 'block_par1'),
+            'quote' => array($this, 'block_quote'),
+            'quoteAuthor' => array($this, 'block_quoteAuthor'),
+            'par2' => array($this, 'block_par2'),
             'sidebar' => array($this, 'block_sidebar'),
             'footer' => array($this, 'block_footer'),
             'javascripts' => array($this, 'block_javascripts'),
@@ -53,18 +61,35 @@ class __TwigTemplate_7bb2589387a7fe4ff97b3aa67624227fc36c5ffdf04631e25a5d5461d5b
         $this->displayBlock('header', $context, $blocks);
         // line 39
         echo "\t\t\t
-\t\t\t";
-        // line 40
+\t\t\t\t<div id=\"content-wrap\">
+\t\t\t\t\t<div id=\"main\">
+\t\t\t\t\t";
+        // line 42
         $this->displayBlock('body', $context, $blocks);
-        // line 157
-        echo "\t\t\t
+        // line 77
+        echo "\t\t\t\t\t<!-- main ends -->\t
+\t\t\t\t\t</div>
+\t\t\t\t
+\t\t\t\t\t<!-- sidebar starts -->
+\t\t\t\t\t<div id=\"sidebar\">\t\t\t
+\t\t\t\t\t\t
+\t\t\t\t\t\t";
+        // line 83
+        $this->displayBlock('sidebar', $context, $blocks);
+        // line 119
+        echo "\t\t\t\t\t<!-- sidebar ends -->\t\t
+\t\t\t\t\t</div>
+\t\t\t\t
+\t\t\t\t<!-- content-wrap ends-->\t
+\t\t\t\t</div>
+\t\t\t
 \t\t\t";
-        // line 158
+        // line 125
         $this->displayBlock('footer', $context, $blocks);
-        // line 178
+        // line 145
         echo "\t\t\t";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 179
+        // line 146
         echo "\t\t</div>
     </body>
 </html>
@@ -111,40 +136,109 @@ class __TwigTemplate_7bb2589387a7fe4ff97b3aa67624227fc36c5ffdf04631e25a5d5461d5b
 \t\t\t";
     }
 
-    // line 40
+    // line 42
     public function block_body($context, array $blocks = array())
     {
-        // line 41
-        echo "\t\t\t\t<div id=\"content-wrap\">
-\t\t\t\t\t<div id=\"main\">
+        // line 43
+        echo "\t\t\t\t\t\t<h2><a href=\"global-template\"><";
+        $this->displayBlock('h2', $context, $blocks);
+        echo "</a></h2>
 \t\t\t\t\t\t
-\t\t\t\t\t\t<h2><a href=\"global-template\">Lorem Ipsum Dolor Sit Amet</a></h2>
-\t\t\t\t\t\t
-\t\t\t\t\t\t<h3>Aliquam Risus Justo</h3>
-\t\t\t\t\t\t<p><a href=\"http://getfirefox.com/\"><img src=\"";
+\t\t\t\t\t\t<h3>";
+        // line 45
+        $this->displayBlock('h3', $context, $blocks);
+        echo "</h3>
+\t\t\t\t\t\t<p><a ";
+        // line 46
+        $this->displayBlock('hrefp1', $context, $blocks);
+        echo "> <img ";
+        $this->displayBlock('imgp1', $context, $blocks);
+        echo " width=\"100\" height=\"120\"  class=\"float-left\" /></a>
+\t\t\t\t\t\t";
         // line 47
+        $this->displayBlock('par1', $context, $blocks);
+        // line 54
+        echo "\t\t\t
+\t\t\t\t\t\t</p>
+\t\t\t\t\t\t
+\t\t\t\t\t\t<blockquote>
+\t\t\t\t\t\t<p>";
+        // line 58
+        $this->displayBlock('quote', $context, $blocks);
+        // line 60
+        echo "\t\t\t\t\t\t</p>
+\t\t\t\t\t\t
+\t\t\t\t\t\t<p class=\"align-right\"> - ";
+        // line 62
+        $this->displayBlock('quoteAuthor', $context, $blocks);
+        echo "</p>
+\t\t\t\t\t\t</blockquote>
+\t\t\t\t\t\t
+\t\t\t\t\t\t<p>";
+        // line 65
+        $this->displayBlock('par2', $context, $blocks);
+        // line 74
+        echo "\t\t\t\t
+\t\t\t\t\t\t</p>
+\t\t\t\t\t";
+    }
+
+    // line 43
+    public function block_h2($context, array $blocks = array())
+    {
+        echo "Lorem Ipsum Dolor Sit Amet";
+    }
+
+    // line 45
+    public function block_h3($context, array $blocks = array())
+    {
+        echo "Aliquam Risus Justo";
+    }
+
+    // line 46
+    public function block_hrefp1($context, array $blocks = array())
+    {
+        echo "href=\"http://getfirefox.com/\"";
+    }
+
+    public function block_imgp1($context, array $blocks = array())
+    {
+        echo "src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/firefox-gray.jpg"), "html", null, true);
-        echo "\" width=\"100\" height=\"120\" alt=\"firefox\" class=\"float-left\" /></a>
-\t\t\t\t\t\tLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+        echo "\" alt=\"firefox\"";
+    }
+
+    // line 47
+    public function block_par1($context, array $blocks = array())
+    {
+        echo "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
 \t\t\t\t\t\tCras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
 \t\t\t\t\t\tposuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum 
 \t\t\t\t\t\todio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra 
 \t\t\t\t\t\tcondimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. 
 \t\t\t\t\t\tIn tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
 \t\t\t\t\t\tCras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
-\t\t\t\t\t\tposuere nunc justo tempus leo. \t\t\t\t
-\t\t\t\t\t\t</p>
-\t\t\t\t\t\t
-\t\t\t\t\t\t<blockquote>
-\t\t\t\t\t\t<p>To be yourself in a world that is constantly trying to 
-\t\t\t\t\t\tmake you something else is the greatest accomplishment.
-\t\t\t\t\t\t</p>
-\t\t\t\t\t\t
-\t\t\t\t\t\t<p class=\"align-right\"> - Ralph Waldo Emerson</p>
-\t\t\t\t\t\t</blockquote>
-\t\t\t\t\t\t
-\t\t\t\t\t\t<p>
-\t\t\t\t\t\tVestibulum venenatis. Nulla vel ipsum. Proin rutrum, urna sit amet bibendum 
+\t\t\t\t\t\tposuere nunc justo tempus leo.";
+    }
+
+    // line 58
+    public function block_quote($context, array $blocks = array())
+    {
+        echo "To be yourself in a world that is constantly trying to 
+\t\t\t\t\t\tmake you something else is the greatest accomplishment.";
+    }
+
+    // line 62
+    public function block_quoteAuthor($context, array $blocks = array())
+    {
+        echo "Ralph Waldo Emerson";
+    }
+
+    // line 65
+    public function block_par2($context, array $blocks = array())
+    {
+        // line 66
+        echo "\t\t\t\t\t\tVestibulum venenatis. Nulla vel ipsum. Proin rutrum, urna sit amet bibendum 
 \t\t\t\t\t\tpellentesque, ante sapien varius turpis, eu nonummy nunc urna scelerisque ante. 
 \t\t\t\t\t\tNunc sed leo at dolor pharetra facilisis. Sed sed lectus at justo dapibus tristique. 
 \t\t\t\t\t\tMorbi molestie pulvinar elit. Donec dictum nibh nec est. Aliquam sagittis, lacus 
@@ -152,36 +246,18 @@ class __TwigTemplate_7bb2589387a7fe4ff97b3aa67624227fc36c5ffdf04631e25a5d5461d5b
 \t\t\t\t\t\tPraesent sed nibh. Vestibulum bibendum enim ut nisi fringilla accumsan. 
 \t\t\t\t\t\tNullam dapibus fermentum nulla. Phasellus in orci vel justo facilisis iaculis. 
 \t\t\t\t\t\tQuisque facilisis ornare felis. Curabitur nunc libero, dapibus vel, commodo nec, 
-\t\t\t\t\t\tsemper a, massa. Suspendisse potenti. Morbi a nisl. Nunc euismod elit non lectus. \t\t\t\t
-\t\t\t\t\t\t</p>
-\t\t\t\t\t
-\t\t\t\t\t<!-- main ends -->\t
-\t\t\t\t\t</div>
-\t\t\t\t
-\t\t\t\t\t<!-- sidebar starts -->
-\t\t\t\t\t<div id=\"sidebar\">\t\t\t
-\t\t\t\t\t\t
-\t\t\t\t\t\t";
-        // line 84
-        $this->displayBlock('sidebar', $context, $blocks);
-        // line 151
-        echo "\t\t\t\t\t<!-- sidebar ends -->\t\t
-\t\t\t\t\t</div>
-\t\t\t\t
-\t\t\t\t<!-- content-wrap ends-->\t
-\t\t\t\t</div>
-\t\t\t";
+\t\t\t\t\t\tsemper a, massa. Suspendisse potenti. Morbi a nisl. Nunc euismod elit non lectus. ";
     }
 
-    // line 84
+    // line 83
     public function block_sidebar($context, array $blocks = array())
     {
-        // line 85
+        // line 84
         echo "\t\t\t\t\t\t<h3>About</h3>\t\t\t
 \t\t\t\t\t\t
 \t\t\t\t\t\t<p>
 \t\t\t\t\t\t<a href=\"http://getfirefox.com/\"><img src=\"";
-        // line 88
+        // line 87
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/thumb.jpg"), "html", null, true);
         echo "\" width=\"40\" height=\"40\" alt=\"firefox\" class=\"float-left\" /></a>
 \t\t\t\t\t\tLorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
@@ -195,7 +271,7 @@ class __TwigTemplate_7bb2589387a7fe4ff97b3aa67624227fc36c5ffdf04631e25a5d5461d5b
 \t\t\t\t\t\t<label for=\"qsearch\">Search:</label>
 \t\t\t\t\t\t<input class=\"tbox\" id=\"qsearch\" type=\"text\" name=\"qsearch\" value=\"Search this site...\" title=\"Start typing and hit ENTER\" />
 \t\t\t\t\t\t<input class=\"btn\" alt=\"Search\" type=\"image\" name=\"searchsubmit\" title=\"Search\" src=\"";
-        // line 99
+        // line 98
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("images/search.gif"), "html", null, true);
         echo "\" />
 \t\t\t\t\t\t</p>
@@ -216,42 +292,11 @@ class __TwigTemplate_7bb2589387a7fe4ff97b3aa67624227fc36c5ffdf04631e25a5d5461d5b
 \t\t\t\t\t\t\t<li><a href=\"http://www.cssremix.com\">CSS Remix</a></li>
 \t\t\t\t\t\t\t<li><a href=\"http://www.cssmania.com/\">CSS Mania</a></li>\t\t\t\t\t
 \t\t\t\t\t\t</ul>
-\t\t\t\t\t\t
-\t\t\t\t\t\t<h3>Sponsors</h3>
-\t\t\t\t\t\t<ul class=\"sidemenu\">
-\t\t\t\t\t\t<li><a href=\"http://themeforest.net?ref=ealigam\" title=\"Themeforest\">Themeforest <br />
-\t\t\t\t\t\t   <span>Site Templates, Web &amp; CMS Themes</span></a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li><a href=\"http://www.4templates.com/?go=228858961\" title=\"4Templates\">4Templates <br />
-\t\t\t\t\t\t   <span>Low Cost High-Quality Templates</span></a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li><a href=\"http://store.templatemonster.com?aff=ealigam\" title=\"Templatemonster\">TemplateMonster <br />
-\t\t\t\t\t\t   <span>Delivering the Best Templates on the Net!</span>
-\t\t\t\t\t\t</a></li>
-\t\t\t\t\t\t<li><a href=\"http://graphicriver.net?ref=ealigam\" title=\"Graphic River\">Graphic River <br />
-\t\t\t\t\t\t   <span>Awesome Stock Graphics</span></a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li><a href=\"http://www.dreamhost.com/r.cgi?287326|SSHOUT\" title=\"Dremahost\">Dreamhost <br />
-\t\t\t\t\t\t   <span>Premium Webhosting. Use the promocode <strong>sshout</strong> and save <strong>50 USD</strong>.</span></a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t</ul>
-\t\t\t\t\t\t
-\t\t\t\t\t\t<h3>Wise Words</h3>
-\t\t\t\t\t\t<p>&quot;To be yourself in a world that is constantly trying to make you 
-\t\t\t\t\t\t  something else is the greatest accomplishment.&quot; </p>
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t<p class=\"align-right\">- Ralph Waldo Emerson</p>
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t<h3>Support Styleshout</h3>
-\t\t\t\t\t\t<p>If you are interested in supporting my work and would like to contribute, you are
-\t\t\t\t\t\twelcome to make a small donation through the 
-\t\t\t\t\t\t<a href=\"http://www.styleshout.com/\">donate link</a> on my website - it will 
-\t\t\t\t\t\tbe a great help and will surely be appreciated.</p>\t\t\t\t\t\t
-\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t";
     }
 
-    // line 158
+    // line 125
     public function block_footer($context, array $blocks = array())
     {
         echo " 
@@ -276,7 +321,7 @@ class __TwigTemplate_7bb2589387a7fe4ff97b3aa67624227fc36c5ffdf04631e25a5d5461d5b
 \t\t\t";
     }
 
-    // line 178
+    // line 145
     public function block_javascripts($context, array $blocks = array())
     {
     }
@@ -293,6 +338,6 @@ class __TwigTemplate_7bb2589387a7fe4ff97b3aa67624227fc36c5ffdf04631e25a5d5461d5b
 
     public function getDebugInfo()
     {
-        return array (  280 => 178,  255 => 158,  199 => 99,  185 => 88,  180 => 85,  177 => 84,  168 => 151,  166 => 84,  126 => 47,  118 => 41,  115 => 40,  92 => 19,  89 => 18,  81 => 13,  75 => 12,  68 => 179,  65 => 178,  63 => 158,  60 => 157,  58 => 40,  55 => 39,  53 => 18,  45 => 14,  43 => 13,  39 => 12,  26 => 1,);
+        return array (  325 => 145,  300 => 125,  275 => 98,  261 => 87,  256 => 84,  253 => 83,  241 => 66,  238 => 65,  232 => 62,  225 => 58,  212 => 47,  199 => 46,  193 => 45,  187 => 43,  181 => 74,  179 => 65,  173 => 62,  169 => 60,  167 => 58,  161 => 54,  159 => 47,  153 => 46,  149 => 45,  143 => 43,  140 => 42,  117 => 19,  114 => 18,  106 => 13,  100 => 12,  93 => 146,  90 => 145,  88 => 125,  80 => 119,  78 => 83,  70 => 77,  68 => 42,  63 => 39,  61 => 18,  53 => 14,  51 => 13,  47 => 12,  34 => 1,  59 => 8,  54 => 7,  49 => 6,  44 => 5,  38 => 4,  33 => 3,);
     }
 }
