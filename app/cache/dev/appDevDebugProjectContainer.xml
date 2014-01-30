@@ -2308,6 +2308,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="SouthhillsOurDatabaseBundle">Southhills\OurDatabaseBundle\Entity</argument>
+              <argument key="AntoninoSimpleEmailerBundle">Antonino\SimpleEmailerBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2346,10 +2347,23 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\Symfony-from-unzip\src\Southhills\OurDatabaseBundle\Entity</argument>
+                        <argument>C:\wamp\www\Symfony-from-unzip\src\Antonino\SimpleEmailerBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>Southhills\OurDatabaseBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\Symfony-from-unzip\src\Southhills\OurDatabaseBundle\Entity</argument>
+                        <argument>C:\wamp\www\Symfony-from-unzip\src\Antonino\SimpleEmailerBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Antonino\SimpleEmailerBundle\Entity</argument>
                 </call>
               </service>
             </argument>

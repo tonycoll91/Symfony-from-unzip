@@ -8,4 +8,8 @@ antonino_template_design:
 
 antonino_emailer:
     pattern: /email/{emailAddress}
-    defaults: { _controller: AntoninoSimpleEmailerBundle:Default:email }
+    defaults: { _controller: AntoninoSimpleEmailerBundle:Default:email}
+
+antonino_email_into_db:
+    pattern: /email/{emailAddress}
+    defaults: { _controller: AntoninoSimpleEmailerBundle:Default:insertIntoDB}

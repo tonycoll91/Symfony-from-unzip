@@ -145,9 +145,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Antonino\\SimpleEmailerBundle\\Controller\\DefaultController::globalTemplateAction',  '_route' => 'antonino_template_design',);
         }
 
-        // antonino_emailer
-        if (0 === strpos($pathinfo, '/email') && preg_match('#^/email/(?P<emailAddress>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'antonino_emailer')), array (  '_controller' => 'Antonino\\SimpleEmailerBundle\\Controller\\DefaultController::emailAction',));
+        if (0 === strpos($pathinfo, '/email')) {
+            // antonino_emailer
+            if (preg_match('#^/email/(?P<emailAddress>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'antonino_emailer')), array (  '_controller' => 'Antonino\\SimpleEmailerBundle\\Controller\\DefaultController::emailAction',));
+            }
+
+            // antonino_email_into_db
+            if (preg_match('#^/email/(?P<emailAddress>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'antonino_email_into_db')), array (  '_controller' => 'Antonino\\SimpleEmailerBundle\\Controller\\DefaultController::insertIntoDBAction',));
+            }
+
         }
 
         // southhills_our_database_homepage

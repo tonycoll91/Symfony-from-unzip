@@ -3,6 +3,7 @@
 namespace Antonino\SimpleEmailerBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -27,5 +28,21 @@ class DefaultController extends Controller
 		$this->get('mailer')->send($message);
 		
 		return $this->render('AntoninoSimpleEmailerBundle:Default:sentEmail.html.twig');
+		
+	} 
+	
+	public function insertIntoDBAction($emailAddress)
+	{
+		$EmailLogEntry = new EmailLogEntry();
+		$EmailLogEntry->setEmailAddress($emailAddress);
+		$EmailLogEntry->setDateTime(date('m/d/Y H:i:s'));
+		
+		$em = $this->getDoctrine()->getManager();
+		$em->persist($EmailLogEntry);
+		$em->flush();
+		
+		return new Response('Created email address id '.$emailAddress->getId());
 	}
+	
+	
 }
